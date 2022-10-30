@@ -571,8 +571,7 @@ let [files_names_all,setFilesNames] = useState([])
       language:selected[j].value,
       direction:auto_string,
       file:orginalFiles[String(d)].name,
-      global_object,
-      connected
+      global_object
     
     
     })
