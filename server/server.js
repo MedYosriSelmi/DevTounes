@@ -17,11 +17,11 @@ app.use(cors())
 
 app.use(express.json({limit: '50mb'}))
 
-app.get("/hello",async(req,res)=>{
+app.get("/api/hello",async(req,res)=>{
   res.json({msg:"hello world"})
 })
 
-app.post("/html_translator",async(req,res)=>{
+app.post("/api/html_translator",async(req,res)=>{
     try{
         const {text_array,language,direction,file,connected} = req.body
      
@@ -188,7 +188,7 @@ app.post("/html_translator",async(req,res)=>{
 })
 
 
-app.post("/download_file",async(req,res)=>{
+app.post("/api/download_file",async(req,res)=>{
   try{
     const {original_html_file} = req.body
    
@@ -203,7 +203,7 @@ app.post("/download_file",async(req,res)=>{
   }
 })
 
-app.get("/file",async(req,res)=>{
+app.get("/api/file",async(req,res)=>{
   try {
 
     res.download("./index.html")
@@ -212,7 +212,7 @@ app.get("/file",async(req,res)=>{
   }
 })
 
-app.post("/download_json_file",async(req,res)=>{
+app.post("/api/download_json_file",async(req,res)=>{
   try{
     const {original_json_file} = req.body
 
@@ -227,7 +227,7 @@ app.post("/download_json_file",async(req,res)=>{
   }
 })
 
-app.get("/file_json",async(req,res)=>{
+app.get("/api/file_json",async(req,res)=>{
   try {
     res.download("./file.json")
   } catch (err) {
