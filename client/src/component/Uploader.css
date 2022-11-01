@@ -12,7 +12,7 @@ body{
   justify-content: center;
   padding: 0 10px;
   min-height: 100vh;
-  background-image: url("../images/app_background.jpg");
+  background-image: url("https://res.cloudinary.com/dx8hb4haj/image/upload/v1667292509/app_background_txklxf.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   backface-visibility: 0.5;

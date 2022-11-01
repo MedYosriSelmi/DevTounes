@@ -40,9 +40,8 @@ import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
 import moment from 'moment';
 import useSound from 'use-sound';
-import ClickSound from "../audioEffect/Mouse-Click.mp3"
 import ErrorLoader  from "./ErrorLoader";
-import ErrorSound from "../audioEffect/errorSound.mp3"
+
 
 import Navbar from "./Navbar"
 
@@ -170,7 +169,6 @@ const [contries,setCountries] = useState()
 const [fileTranslator,setFileTranslatior] = useState([])
 
 const [orginals_html,setOriginalsHtml] = useState([])
-let [showTerminal,setShowTerminal] = useState(false)
 
 
 
@@ -236,7 +234,7 @@ const structureData = (data) =>{
   return merged
 }
 
-const spinnerFrames = ["⠋", "⠙", "⠹", "⠸", "⠼", "⠴", "⠦", "⠧", "⠇", "⠏"];
+
 
 
 let [files_names_all,setFilesNames] = useState([])
@@ -333,7 +331,7 @@ let [files_names_all,setFilesNames] = useState([])
   };
 
 
-  const [play] = useSound(ClickSound, {
+  const [play] = useSound("https://res.cloudinary.com/dx8hb4haj/video/upload/v1667292765/Mouse-Click_yrm94m.mp3", {
     volume: 0.5,
   });
   let [depaced_value_affect_on_displaying_table,setValueAffect] = useState(false)
@@ -367,7 +365,7 @@ let [files_names_all,setFilesNames] = useState([])
 
   let [showErrorPage,setShowErrorPage] = useState(false)
   let [allErrorsFound,setAllErrorsFound] = useState([])
-  const [playError] = useSound(ErrorSound, {
+  const [playError] = useSound("https://res.cloudinary.com/dx8hb4haj/video/upload/v1667292641/errorSound_ciejli.mp3", {
     volume: 0.5,
   });
 
@@ -566,7 +564,7 @@ let [files_names_all,setFilesNames] = useState([])
  
     let res = []
     
-    res = await axios.post("http://185.215.166.217/api/html_translator",{
+    res = await axios.post("http://api.tunisiadevs.com/api/html_translator",{
       text_array: unique  ,
       language:selected[j].value,
       direction:auto_string,

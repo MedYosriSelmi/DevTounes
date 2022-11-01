@@ -196,12 +196,12 @@ const ChooseGrid = (props) =>{
       }
     
       const   htmlDownload = async() =>{
-     await axios.post("http://185.215.166.217/api/download_file",{ original_html_file:replacer()
+     await axios.post("http://api.tunisiadevs.com/api/download_file",{ original_html_file:replacer()
  
     })
     // res.blob()
     axios({
-      url:"http://185.215.166.217/api/file",
+      url:"http://api.tunisiadevs.com/api/file",
       method:"GET",
       responseType:"blob"
     }).then(res =>{
@@ -218,10 +218,10 @@ const ChooseGrid = (props) =>{
     
     
       const JSONDOWNLOADER = async() =>{
-       let res =  await axios.post("http://185.215.166.217/api/download_json_file",{ original_json_file:replacer_json_format()})
+       let res =  await axios.post("http://api.tunisiadevs.com/api/download_json_file",{ original_json_file:replacer_json_format()})
    
        axios({
-      url:"http://185.215.166.217/api/file_json",
+      url:"http://api.tunisiadevs.com/api/file_json",
       method:"GET",
       responseType:"blob"
     }).then(res =>{
